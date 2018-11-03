@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Reset = ({id, text, resetClock}) => {
+const Reset = ({id, text, resetClock, enableSBButtons}) => {
 
   const handleClick = () => {
     resetClock();
+    enableSBButtons();
   }
 
   return (

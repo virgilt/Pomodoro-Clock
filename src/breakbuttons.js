@@ -1,9 +1,9 @@
 import React from 'react';
 
-const BreakButtons = ({id, text}) => {
+const BreakButtons = ({id, text, breakTime, disableIncDec}) => {
 
   const handleClick = (event) => {
-    let button = document.getElementById(id)
+    disableIncDec(id, breakTime)
   }
 
   return (

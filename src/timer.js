@@ -1,10 +1,6 @@
 import React from 'react';
 
-
-
 const Timer = ({id, text}) => {
-
-
 
   return (
     <div>

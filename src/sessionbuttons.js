@@ -1,8 +1,13 @@
 import React from 'react';
 
-const SessionButtons = ({id, text}) => {
+const SessionButtons = ({id, text, sessionTime, disableIncDec}) => {
+
+  const handleClick = (event) => {
+    disableIncDec(id, sessionTime)
+  }
+
   return (
-    <div>
+    <div onClick={handleClick}>
       <button id={id}>{text}</button>
     </div>
   )
