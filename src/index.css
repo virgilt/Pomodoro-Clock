@@ -1,1 +1,28 @@
+body {
+  display: flex;
+  justify-content: center;
+}
 
+#app {
+  margin-top: 30px;
+  align-items: center;
+  justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 300px);
+  grid-template-rows: repeat(3, 100px);
+  grid-template-areas: "break session" "timer timer" "controls controls";
+}
+#app #breakSection {
+  grid-area: break;
+}
+#app #sessionSection {
+  grid-area: session;
+}
+#app #timerSection {
+  grid-area: timer;
+}
+#app #controlsSection {
+  grid-area: controls;
+}
+
+/*# sourceMappingURL=index.css.map */

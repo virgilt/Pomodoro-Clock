@@ -286,16 +286,24 @@ class App extends Component {
     })
 
     return (
-      <div className="App">
-        {breakSection}
-        {breakButtons}
-        {session}
-        {sessionButtons}
-        {timer}
-        {clock}
-        {start_stop}
-        {reset}
-        <audio id='beep' src='https://goo.gl/65cBl1'></audio>
+      <div id="app">
+        <div id='breakSection'>
+          {breakSection}
+          {breakButtons}
+        </div>
+        <div id='sessionSection'>
+          {session}
+          {sessionButtons}
+        </div>
+        <div id='timerSection'>
+          {timer}
+          {clock}
+        </div>
+        <div id='controlsSection'>
+          {start_stop}
+          {reset}
+          <audio id='beep' src='https://goo.gl/65cBl1'></audio>
+        </div>
       </div>
     );
   }

@@ -1,0 +1,33 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+#app {
+  margin-top: 30px;
+  align-items: center;
+  justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 300px);
+  grid-template-rows: repeat(3, 100px);
+  grid-template-areas:
+  'break session'
+  'timer timer'
+  'controls controls';
+
+  #breakSection {
+    grid-area: break;
+  }
+
+  #sessionSection {
+    grid-area: session;
+  }
+
+  #timerSection {
+    grid-area: timer;
+  }
+
+  #controlsSection {
+    grid-area: controls;
+  }
+}
