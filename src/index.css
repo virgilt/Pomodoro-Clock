@@ -32,21 +32,8 @@ body #app #timerSection {
   width: 100px;
   font-size: 30px;
 }
-body #app #controlsSection {
-  grid-area: controls;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 100px;
-  height: 40px;
-}
-body #app #controlsSection #start_stop {
-  width: 40px;
-  height: 40px;
-}
-body #app #controlsSection #reset {
-  width: 40px;
-  height: 40px;
+body #app #timerSection #timer-label {
+  margin-bottom: 5px;
 }
 body #app .breakSessionSection {
   display: grid;
@@ -55,34 +42,30 @@ body #app .breakSessionSection {
   grid-template-areas: "label label label" "decrement time increment";
   text-align: center;
 }
-body #app .breakSessionSection #break-label {
+body #app .breakSessionSection #break-label, body #app .breakSessionSection #session-label {
   grid-area: label;
 }
-body #app .breakSessionSection #break-length {
+body #app .breakSessionSection #break-length, body #app .breakSessionSection #session-length {
   grid-area: time;
   align-self: center;
 }
-body #app .breakSessionSection #break-increment {
+body #app .breakSessionSection #break-increment, body #app .breakSessionSection #session-increment {
   grid-area: increment;
 }
-body #app .breakSessionSection #break-decrement {
+body #app .breakSessionSection #break-decrement, body #app .breakSessionSection #session-decrement {
   grid-area: decrement;
 }
-body #app .breakSessionSection #session-label {
-  grid-area: label;
+body #app #controlsSection {
+  grid-area: controls;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100px;
+  height: 40px;
 }
-body #app .breakSessionSection #session-length {
-  grid-area: time;
-  align-self: center;
-}
-body #app .breakSessionSection #session-increment {
-  grid-area: increment;
-}
-body #app .breakSessionSection #session-decrement {
-  grid-area: decrement;
-}
-body #app #timer-label {
-  margin-bottom: 5px;
+body #app #controlsSection #start_stop, body #app #controlsSection #reset {
+  width: 40px;
+  height: 40px;
 }
 body #app .buttonsDiv {
   display: flex;
@@ -101,7 +84,7 @@ body #app button {
 body #app button:hover {
   transform: scale(1.1);
 }
-body #app svg {
+body #app button svg {
   padding-left: 1.25px;
   font-size: 14px;
   color: #000;

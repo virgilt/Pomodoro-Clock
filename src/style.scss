@@ -36,24 +36,9 @@ body {
       padding-top: 20px;
       width: 100px;
       font-size: 30px;
-    }
 
-    #controlsSection {
-      grid-area: controls;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      width: 100px;
-      height: 40px;
-
-      #start_stop {
-        width: 40px;
-        height: 40px;
-      }
-
-      #reset {
-        width: 40px;
-        height: 40px;
+      #timer-label {
+        margin-bottom: 5px;
       }
     }
 
@@ -66,44 +51,36 @@ body {
         'decrement time increment';
       text-align: center;
 
-      #break-label {
+      #break-label, #session-label {
         grid-area: label;
       }
 
-      #break-length {
+      #break-length, #session-length {
         grid-area: time;
         align-self: center;
       }
 
-      #break-increment {
+      #break-increment, #session-increment {
         grid-area: increment;
       }
 
-      #break-decrement {
+      #break-decrement, #session-decrement {
         grid-area: decrement;
       }
-
-      #session-label {
-        grid-area: label;
-      }
-
-      #session-length {
-        grid-area: time;
-        align-self: center;
-      }
-
-      #session-increment {
-        grid-area: increment;
-      }
-
-      #session-decrement {
-        grid-area: decrement;
-      }
-
     }
 
-    #timer-label {
-      margin-bottom: 5px;
+    #controlsSection {
+      grid-area: controls;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 100px;
+      height: 40px;
+
+      #start_stop, #reset {
+        width: 40px;
+        height: 40px;
+      }
     }
 
     .buttonsDiv {
@@ -123,13 +100,12 @@ body {
       &:hover {
         transform: scale(1.1);
       }
-    }
 
-    svg {
-      padding-left: 1.25px;
-      font-size: 14px;
-      color: #000;
+      svg {
+        padding-left: 1.25px;
+        font-size: 14px;
+        color: #000;
+      }
     }
   }
-
 }
