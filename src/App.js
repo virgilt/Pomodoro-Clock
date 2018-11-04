@@ -7,6 +7,11 @@ import Timer from './timer';
 import Clock from './clock';
 import Controls from './start_stop';
 import Reset from './reset';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUp, faArrowDown, faPlay, faPause, faSync } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faArrowUp, faArrowDown, faPlay, faPause, faSync);
 
 const breakIncrement = 'break-increment';
 const breakDecrement = 'break-decrement';
@@ -21,23 +26,23 @@ class App extends Component {
       {id: 'break-length', text: 5},
     ],
     breakButtons: [
-      {id: 'break-increment', text: 'binc'},
-      {id: 'break-decrement', text: 'bdec'}
+      {id: 'break-increment', text: <FontAwesomeIcon icon="arrow-up" />},
+      {id: 'break-decrement', text: <FontAwesomeIcon icon="arrow-down" />}
     ],
     session: [
       {id: 'session-label', text: 'Session Length'},
       {id: 'session-length', text: 25},
     ],
     sessionButtons: [
-      {id: 'session-increment', text: 'sinc'},
-      {id: 'session-decrement', text: 'sdec'}
+      {id: 'session-increment', text: <FontAwesomeIcon icon="arrow-up" />},
+      {id: 'session-decrement', text: <FontAwesomeIcon icon="arrow-down" />}
     ],
     timer: [
       {id: 'timer-label', text: 'Session'}
     ],
     clock: [{id: 'time-left', time: 1500}],
-    start_stop: [{id: 'start_stop', text: 'start/stop', startStopState: 'stopped'}],
-    reset: [{id: 'reset', text: 'reset'}]
+    start_stop: [{id: 'start_stop', text: <FontAwesomeIcon icon="play" />, startStopState: 'stopped'}],
+    reset: [{id: 'reset', text: <FontAwesomeIcon icon="sync" />}]
   }
 
   createClock = (time) => {
@@ -63,6 +68,7 @@ class App extends Component {
     clock[0].time = 1500;
     let start_stop = [...this.state.start_stop]
     start_stop[0].startStopState = 'stopped';
+    start_stop[0].text = <FontAwesomeIcon icon="play" />
     this.setState({
       break: breakSection,
       session: session,
@@ -77,6 +83,7 @@ class App extends Component {
     if (startStopState === 'stopped') {
       myTicker = setInterval(this.tickTock, 1000);
       started[0].startStopState = 'started';
+      started[0].text = <FontAwesomeIcon icon="pause" />
       this.setState({
         start_stop: started
       })
@@ -84,6 +91,7 @@ class App extends Component {
     } else if (startStopState === 'started') {
       clearInterval(myTicker);
       started[0].startStopState = 'stopped';
+      started[0].text = <FontAwesomeIcon icon="play" />
       this.setState({
         start_stop: started
       })
@@ -287,11 +295,11 @@ class App extends Component {
 
     return (
       <div id="app">
-        <div id='breakSection'>
+        <div className='breakSessionSection'>
           {breakSection}
           {breakButtons}
         </div>
-        <div id='sessionSection'>
+        <div className='breakSessionSection'>
           {session}
           {sessionButtons}
         </div>

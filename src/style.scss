@@ -1,33 +1,93 @@
 body {
   display: flex;
   justify-content: center;
-}
 
-#app {
-  margin-top: 30px;
-  align-items: center;
-  justify-items: center;
-  display: grid;
-  grid-template-columns: repeat(2, 300px);
-  grid-template-rows: repeat(3, 100px);
-  grid-template-areas:
-  'break session'
-  'timer timer'
-  'controls controls';
+  #app {
+    margin-top: 30px;
+    align-items: center;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    grid-template-rows: repeat(3, 100px);
+    grid-template-areas:
+    'break session'
+    'timer timer'
+    'controls controls';
 
-  #breakSection {
-    grid-area: break;
+    #breakSection {
+      grid-area: break;
+    }
+
+    #sessionSection {
+      grid-area: session;
+    }
+
+    #timerSection {
+      grid-area: timer;
+      width: 100px;
+      text-align: center;
+    }
+
+    #controlsSection {
+      grid-area: controls;
+      width: 40px;
+      height: 80px;
+      text-align: center;
+    }
+
+    .breakSessionSection {
+      display: grid;
+      grid-template-columns: repeat(3, 40px);
+      grid-template-rows: repeat(2, 40px);
+      grid-template-areas:
+        'label label label'
+        'decrement time increment';
+      text-align: center;
+
+      #break-label {
+        grid-area: label;
+      }
+
+      #break-length {
+        grid-area: time;
+      }
+
+      #break-increment {
+        grid-area: increment;
+      }
+
+      #break-decrement {
+        grid-area: decrement;
+      }
+
+      #session-label {
+        grid-area: label;
+      }
+
+      #session-length {
+        grid-area: time;
+      }
+
+      #session-increment {
+        grid-area: increment;
+      }
+
+      #session-decrement {
+        grid-area: decrement;
+      }
+
+    }
+
+    .buttonsDiv {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    button {
+      width: 100%;
+      height: 100%;
+    }
   }
 
-  #sessionSection {
-    grid-area: session;
-  }
-
-  #timerSection {
-    grid-area: timer;
-  }
-
-  #controlsSection {
-    grid-area: controls;
-  }
 }

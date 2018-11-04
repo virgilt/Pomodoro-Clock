@@ -7,7 +7,7 @@ const SessionButtons = ({id, text, sessionTime, disableIncDec}) => {
   }
 
   return (
-    <div onClick={handleClick}>
+    <div id={id} onClick={handleClick}>
       <button id={id}>{text}</button>
     </div>
   )

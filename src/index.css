@@ -2,8 +2,7 @@ body {
   display: flex;
   justify-content: center;
 }
-
-#app {
+body #app {
   margin-top: 30px;
   align-items: center;
   justify-items: center;
@@ -12,17 +11,62 @@ body {
   grid-template-rows: repeat(3, 100px);
   grid-template-areas: "break session" "timer timer" "controls controls";
 }
-#app #breakSection {
+body #app #breakSection {
   grid-area: break;
 }
-#app #sessionSection {
+body #app #sessionSection {
   grid-area: session;
 }
-#app #timerSection {
+body #app #timerSection {
   grid-area: timer;
+  width: 100px;
+  text-align: center;
 }
-#app #controlsSection {
+body #app #controlsSection {
   grid-area: controls;
+  width: 40px;
+  height: 80px;
+  text-align: center;
+}
+body #app .breakSessionSection {
+  display: grid;
+  grid-template-columns: repeat(3, 40px);
+  grid-template-rows: repeat(2, 40px);
+  grid-template-areas: "label label label" "decrement time increment";
+  text-align: center;
+}
+body #app .breakSessionSection #break-label {
+  grid-area: label;
+}
+body #app .breakSessionSection #break-length {
+  grid-area: time;
+}
+body #app .breakSessionSection #break-increment {
+  grid-area: increment;
+}
+body #app .breakSessionSection #break-decrement {
+  grid-area: decrement;
+}
+body #app .breakSessionSection #session-label {
+  grid-area: label;
+}
+body #app .breakSessionSection #session-length {
+  grid-area: time;
+}
+body #app .breakSessionSection #session-increment {
+  grid-area: increment;
+}
+body #app .breakSessionSection #session-decrement {
+  grid-area: decrement;
+}
+body #app .buttonsDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+body #app button {
+  width: 100%;
+  height: 100%;
 }
 
 /*# sourceMappingURL=index.css.map */

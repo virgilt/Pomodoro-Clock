@@ -8,7 +8,7 @@ const Reset = ({id, text, resetClock, enableSBButtons}) => {
   }
 
   return (
-    <div onClick={handleClick}>
+    <div id={id} onClick={handleClick}>
       <button id={id}>{text}</button>
     </div>
   )

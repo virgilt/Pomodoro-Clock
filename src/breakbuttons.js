@@ -6,8 +6,12 @@ const BreakButtons = ({id, text, breakTime, disableIncDec}) => {
     disableIncDec(id, breakTime)
   }
 
+  if(id === 'break-increment') {
+
+  }
+
   return (
-    <div onClick={handleClick}>
+    <div id={id} onClick={handleClick}>
       <button id={id}>{text}</button>
     </div>
   )

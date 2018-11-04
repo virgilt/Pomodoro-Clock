@@ -7,7 +7,7 @@ const Start_stop = ({id, text, startStopState, startStop}) => {
   }
 
   return (
-    <div onClick={handleClick}>
+    <div id={id} onClick={handleClick}>
       <button id={id}>{text}</button>
     </div>
   )
