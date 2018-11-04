@@ -1,18 +1,24 @@
 body {
   display: flex;
   justify-content: center;
+  font-family: 'Orbitron', sans-serif;
 
   #app {
-    margin-top: 30px;
+    margin-top: 100px;
+    padding: 35px 20px 20px 20px;
     align-items: center;
     justify-items: center;
     display: grid;
-    grid-template-columns: repeat(2, 300px);
+    grid-template-columns: repeat(2, 200px);
     grid-template-rows: repeat(3, 100px);
     grid-template-areas:
     'break session'
     'timer timer'
     'controls controls';
+    background-color: #222;
+    box-shadow: 1px 1px 1px 1px #000, 2px 2px 1px 1px #444 inset;
+    border-radius: 50px;
+    color: #FFF2F1;
 
     #breakSection {
       grid-area: break;
@@ -24,15 +30,31 @@ body {
 
     #timerSection {
       grid-area: timer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
       width: 100px;
-      text-align: center;
+      font-size: 30px;
     }
 
     #controlsSection {
       grid-area: controls;
-      width: 40px;
-      height: 80px;
-      text-align: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 100px;
+      height: 40px;
+
+      #start_stop {
+        width: 40px;
+        height: 40px;
+      }
+
+      #reset {
+        width: 40px;
+        height: 40px;
+      }
     }
 
     .breakSessionSection {
@@ -50,6 +72,7 @@ body {
 
       #break-length {
         grid-area: time;
+        align-self: center;
       }
 
       #break-increment {
@@ -66,6 +89,7 @@ body {
 
       #session-length {
         grid-area: time;
+        align-self: center;
       }
 
       #session-increment {
@@ -78,6 +102,10 @@ body {
 
     }
 
+    #timer-label {
+      margin-bottom: 5px;
+    }
+
     .buttonsDiv {
       display: flex;
       flex-direction: row;
@@ -87,6 +115,20 @@ body {
     button {
       width: 100%;
       height: 100%;
+      border-radius: 20px;
+      background-color: #BF2400;
+      outline: none;
+      border: none;
+      box-shadow: 1px 1px 1px 1px #400C00, 1px 1px 1px 1px #FF3000 inset;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    svg {
+      padding-left: 1.25px;
+      font-size: 14px;
+      color: #000;
     }
   }
 

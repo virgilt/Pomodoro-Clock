@@ -26,23 +26,23 @@ class App extends Component {
       {id: 'break-length', text: 5},
     ],
     breakButtons: [
-      {id: 'break-increment', text: <FontAwesomeIcon icon="arrow-up" />},
-      {id: 'break-decrement', text: <FontAwesomeIcon icon="arrow-down" />}
+      {id: 'break-increment', text: <FontAwesomeIcon className='arrow' icon="arrow-up" />},
+      {id: 'break-decrement', text: <FontAwesomeIcon className='arrow' icon="arrow-down" />}
     ],
     session: [
       {id: 'session-label', text: 'Session Length'},
       {id: 'session-length', text: 25},
     ],
     sessionButtons: [
-      {id: 'session-increment', text: <FontAwesomeIcon icon="arrow-up" />},
-      {id: 'session-decrement', text: <FontAwesomeIcon icon="arrow-down" />}
+      {id: 'session-increment', text: <FontAwesomeIcon className='arrow' icon="arrow-up" />},
+      {id: 'session-decrement', text: <FontAwesomeIcon className='arrow' icon="arrow-down" />}
     ],
     timer: [
       {id: 'timer-label', text: 'Session'}
     ],
     clock: [{id: 'time-left', time: 1500}],
-    start_stop: [{id: 'start_stop', text: <FontAwesomeIcon icon="play" />, startStopState: 'stopped'}],
-    reset: [{id: 'reset', text: <FontAwesomeIcon icon="sync" />}]
+    start_stop: [{id: 'start_stop', text: <FontAwesomeIcon className='control' icon="play" />, startStopState: 'stopped'}],
+    reset: [{id: 'reset', text: <FontAwesomeIcon className='control' icon="sync" />}]
   }
 
   createClock = (time) => {
@@ -68,7 +68,7 @@ class App extends Component {
     clock[0].time = 1500;
     let start_stop = [...this.state.start_stop]
     start_stop[0].startStopState = 'stopped';
-    start_stop[0].text = <FontAwesomeIcon icon="play" />
+    start_stop[0].text = <FontAwesomeIcon className='control' icon="play" />
     this.setState({
       break: breakSection,
       session: session,
@@ -79,21 +79,21 @@ class App extends Component {
   }
 
   startStop = (startStopState) => {
-    let started = [...this.state.start_stop];
+    let start_stop = [...this.state.start_stop];
     if (startStopState === 'stopped') {
       myTicker = setInterval(this.tickTock, 1000);
-      started[0].startStopState = 'started';
-      started[0].text = <FontAwesomeIcon icon="pause" />
+      start_stop[0].startStopState = 'started';
+      start_stop[0].text = <FontAwesomeIcon className='control' icon="pause" />
       this.setState({
-        start_stop: started
+        start_stop: start_stop
       })
       this.enableSBButtons(true);
     } else if (startStopState === 'started') {
       clearInterval(myTicker);
-      started[0].startStopState = 'stopped';
-      started[0].text = <FontAwesomeIcon icon="play" />
+      start_stop[0].startStopState = 'stopped';
+      start_stop[0].text = <FontAwesomeIcon className='control' icon="play" />
       this.setState({
-        start_stop: started
+        start_stop: start_stop
       })
       this.enableSBButtons(false);
     }

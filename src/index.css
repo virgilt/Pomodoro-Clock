@@ -1,15 +1,21 @@
 body {
   display: flex;
   justify-content: center;
+  font-family: "Orbitron", sans-serif;
 }
 body #app {
-  margin-top: 30px;
+  margin-top: 100px;
+  padding: 35px 20px 20px 20px;
   align-items: center;
   justify-items: center;
   display: grid;
-  grid-template-columns: repeat(2, 300px);
+  grid-template-columns: repeat(2, 200px);
   grid-template-rows: repeat(3, 100px);
   grid-template-areas: "break session" "timer timer" "controls controls";
+  background-color: #222;
+  box-shadow: 1px 1px 1px 1px #000, 2px 2px 1px 1px #444 inset;
+  border-radius: 50px;
+  color: #FFF2F1;
 }
 body #app #breakSection {
   grid-area: break;
@@ -19,14 +25,28 @@ body #app #sessionSection {
 }
 body #app #timerSection {
   grid-area: timer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
   width: 100px;
-  text-align: center;
+  font-size: 30px;
 }
 body #app #controlsSection {
   grid-area: controls;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100px;
+  height: 40px;
+}
+body #app #controlsSection #start_stop {
   width: 40px;
-  height: 80px;
-  text-align: center;
+  height: 40px;
+}
+body #app #controlsSection #reset {
+  width: 40px;
+  height: 40px;
 }
 body #app .breakSessionSection {
   display: grid;
@@ -40,6 +60,7 @@ body #app .breakSessionSection #break-label {
 }
 body #app .breakSessionSection #break-length {
   grid-area: time;
+  align-self: center;
 }
 body #app .breakSessionSection #break-increment {
   grid-area: increment;
@@ -52,12 +73,16 @@ body #app .breakSessionSection #session-label {
 }
 body #app .breakSessionSection #session-length {
   grid-area: time;
+  align-self: center;
 }
 body #app .breakSessionSection #session-increment {
   grid-area: increment;
 }
 body #app .breakSessionSection #session-decrement {
   grid-area: decrement;
+}
+body #app #timer-label {
+  margin-bottom: 5px;
 }
 body #app .buttonsDiv {
   display: flex;
@@ -67,6 +92,19 @@ body #app .buttonsDiv {
 body #app button {
   width: 100%;
   height: 100%;
+  border-radius: 20px;
+  background-color: #BF2400;
+  outline: none;
+  border: none;
+  box-shadow: 1px 1px 1px 1px #400C00, 1px 1px 1px 1px #FF3000 inset;
+}
+body #app button:hover {
+  transform: scale(1.1);
+}
+body #app svg {
+  padding-left: 1.25px;
+  font-size: 14px;
+  color: #000;
 }
 
 /*# sourceMappingURL=index.css.map */
